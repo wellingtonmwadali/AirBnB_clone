@@ -1,0 +1,10 @@
+Author Repository Documentation
+
+Authors in Charge: Alex and Mwadali
+
+##Email Addresses:
+
+Alex: gichbouy@gmail.com
+Mwadali:wwellingtonmwadali@gmail.com
+##Purpose:
+This documentation serves as a guide for authors Alex and Mwadali, who are responsible for managing the author repository. The repository contains their written works, research materials, and supplementary documents.
