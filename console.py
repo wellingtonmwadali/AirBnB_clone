@@ -25,7 +25,7 @@ class HBNBCommand(cmd.Cmd):
             "City": City,
             "Amenity": Amenity,
             "Place": Place,
-            "Review": review
+            "Review": Review
             }
 
     def do_nothing(self, arg):
