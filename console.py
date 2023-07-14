@@ -4,6 +4,14 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+import re
+from shlex import split
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -121,6 +129,46 @@ class HBNBCommand(cmd.Cmd):
         ."""
         arg2 = parse(arg)
         objdict = storage.all()
+
+        if len(arg2) == 0:
+            print("** class name missing **")
+            return False
+        if arg2[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+            return False
+        if len(arg2) == 1:
+            print("** instance id missing **")
+            return False
+        if "{}.{}".format(arg2[0], arg2[1]) not in abjdict.keys():
+            print("** no istance found **")
+            return False
+        if len(arg2) == 2:
+            print("** sttribute name missing **")
+            return False
+        if len(arg2) == 3:
+            try:
+                type(eval(arg2[2])) != dict
+            except NameError:
+                print("** value missing **")
+                return False
+
+        if len(arg2) == 4:
+            obj = objdict["{}.{}".format(arg2[0], arg2[1])]
+            if arg2[2] in obj.__class__.__dict__.keys():
+                valueType = type(obj.__class__.__dict__[arg2[2]])
+                obj.__dict__[arg2[2]] = valueType(arg2[3])
+            else:
+                obj.__dict__[arg2[2]] = arg2[3]
+        elif type(eval(arg2[2])) == dict:
+            obj = objdict["{}.{}".format(arg2[0], arg2[1])]
+            for i, j in eval(arg2[2]).items():
+                if (i in obj.__class__.__dict__.keys() and
+                        type(obj.__class__.__dict__[i]) in {str, int, float}):
+                    valueType = type(obj.__class__.__dict__[i])
+                    obj.__dict__[i] = valueType(j)
+                else:
+                    obj.__dict__[i] = j
+        storage.save()
 
 
 if __name__ == '__main__':
