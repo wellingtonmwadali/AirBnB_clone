@@ -79,7 +79,7 @@ class TestState(unittest.TestCase):
         s = State()
         new_d = s.to_dict()
         self.assertEqual(type(new_d), dict)
-        for attr in k.__dict__:
+        for attr in s.__dict__:
             self.assertTrue(attr in new_d)
             self.assertTrue("__class__" in new_d)
 
