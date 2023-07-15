@@ -162,5 +162,5 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(mock_storage.save.called)
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     unittest.main()
