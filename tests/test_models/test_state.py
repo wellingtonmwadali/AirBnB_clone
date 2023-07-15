@@ -76,7 +76,7 @@ class TestState(unittest.TestCase):
     def test_to_dict_creates_dict(self):
         """test whether to_dict method
         creates a dictionary with proper attributes"""
-        k = State()
+        s = State()
         new_d = s.to_dict()
         self.assertEqual(type(new_d), dict)
         for attr in k.__dict__:
@@ -87,7 +87,7 @@ class TestState(unittest.TestCase):
         """test whether values in dict
         returned from to_dict are correct"""
         t_format = "%Y-%m-%dT%H:%M:%S.%f"
-        k = State()
+        s = State()
         new_d = s.to_dict()
         self.assertEqual(new_d["__class__"], "State")
         self.assertEqual(type(new_d["created_at"]), str)
