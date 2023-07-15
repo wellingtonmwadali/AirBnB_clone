@@ -35,7 +35,7 @@ class HBNBCommand(cmd.Cmd):
     """Defines the Holberton command line interpreter(hbnb)"""
 
     prompt = "(hbnb) "
-    my_dict = {
+    __classes = {
             "BaseModel": BaseModel,
             "User": User,
             "State": State,
@@ -156,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg2) == 1:
             print("** instance id missing **")
             return False
-        if "{}.{}".format(arg2[0], arg2[1]) not in abjdict.keys():
+        if "{}.{}".format(arg2[0], arg2[1]) not in objdict.keys():
             print("** no istance found **")
             return False
         if len(arg2) == 2:
