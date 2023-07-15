@@ -15,7 +15,7 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """Defines the Holberton command line interpreter"""
+    """Defines the Holberton command line interpreter(hbnb)"""
 
     prompt = "(hbnb) "
     my_dict = {
@@ -114,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
     def do_count(self, arg):
         """
         method that retrieve the number of
-        instances of a given class.
+        instances of a specified class.
         """
         arg2 = parse(arg)
         count = 0
@@ -125,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-        Update a class instance of a given id by adding
+        Update a class instance of a given id by adding attributes
         ."""
         arg2 = parse(arg)
         objdict = storage.all()
