@@ -55,6 +55,6 @@ class BaseModel:
         dict_1["__class__"] = self.__class__.__name__
         for i, j in self.__dict__.items():
             if i in ("created_at", "updated_at"):
-                j = self.__dict__[j].isoformat()
+                j = self.__dict__[i].isoformat()
                 dict_1[i] = j
         return dict_1
