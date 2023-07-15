@@ -176,5 +176,5 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(string, str(place))
 
 
-if __name__ == "__main__:
+if __name__ == "__main__":
     unittest.main()
