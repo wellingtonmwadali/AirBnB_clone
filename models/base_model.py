@@ -21,7 +21,7 @@ class BaseModel:
             self.created_at = self.updated_at = datetime.now()
             storage.new(self)
         else:
-            for key, value in kwargs.item():
+            for key, value in kwargs.items():
                 if key != '__class__':
                     if key in ('created_at', 'updated_at'):
                         setattr(self, key, datetime.fromisoformat(value))
