@@ -92,8 +92,8 @@ class TestState(unittest.TestCase):
         self.assertEqual(new_d["__class__"], "State")
         self.assertEqual(type(new_d["created_at"]), str)
         self.assertEqual(type(new_d["updated_at"]), str)
-        self.assertEqual(new_d["created_at"], k.created_at.strftime(t_format))
-        self.assertEqual(new_d["updated_at"], k.updated_at.strftime(t_format))
+        self.assertEqual(new_d["created_at"], s.created_at.strftime(t_format))
+        self.assertEqual(new_d["updated_at"], s.updated_at.strftime(t_format))
 
     def test_str(self):
         """test whether the str method has the
