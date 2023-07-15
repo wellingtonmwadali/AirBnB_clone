@@ -105,5 +105,5 @@ class TestCity(unittest.TestCase):
         self.assertEqual(string, str(city))
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     unittest.main()
