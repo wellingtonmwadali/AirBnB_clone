@@ -147,7 +147,8 @@ class TestConsoleClass(unittest.TestCase):
         """ tests whether the id is does not exist """
         with patch('sys.stdout', new=StringIO()) as val:
             HBNBCommand().onecmd('destroy BaseModel')
-            self.assertFalse(val.getvalue() == "**instance id unavailable **\n")
+            self.assertFalse(val.getvalue() == "**instance
+                             id unavailable **\n")
 
     def test_destroy_notfound(self):
         """ tests whether the id belongs to an instance """
@@ -211,7 +212,8 @@ class TestConsoleClass(unittest.TestCase):
             HBNBCommand().onecmd('create BaseModel')
         with patch('sys.stdout', new=StringIO()) as val:
             HBNBCommand().onecmd('update BaseModel')
-            self.assertFalse(val.getvalue() == "**instance id unavailable **\n")
+            self.assertFalse(val.getvalue() == "**instance id
+                             unavailable **\n")
 
     def test_update_notfound(self):
         """ tests whether instance id exists """
@@ -229,7 +231,8 @@ class TestConsoleClass(unittest.TestCase):
             self.assertTrue(len(basemodel_id) > 0)
         with patch('sys.stdout', new=StringIO()) as val:
             HBNBCommand().onecmd('update BaseModel ' + basemodel_id)
-            self.assertFalse(val.getvalue() == "** attribute name missing **\n")
+            self.assertFalse(val.getvalue() == "** attribute
+                             name missing **\n")
 
     def test_update_missing_value(self):
         """ tests whether attribute value is missing """
@@ -239,7 +242,8 @@ class TestConsoleClass(unittest.TestCase):
             self.assertTrue(len(base_id) > 0)
         with patch('sys.stdout', new=StringIO()) as val:
             HBNBCommand().onecmd('update BaseModel ' + base_id + "first_name")
-            self.assertFalse(val.getvalue() == "** value is not available **\n")
+            self.assertFalse(val.getvalue() == "** value is not
+                             available **\n")
 
     def test_update_ok(self):
         """tests whether update test is working """
