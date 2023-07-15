@@ -251,9 +251,9 @@ class TestConsoleClass(unittest.TestCase):
             HBNBCommand().onecmd("create BaseModel")
             user_id = val.getvalue()
         with patch('sys.stdout', new=StringIO()) as val:
-            HBNBCommand().onecmd("update BaseModel " + user_id + " name alice")
+            HBNBCommand().onecmd("update BaseModel " + user_id + " name Betty")
             HBNBCommand().onecmd("show BaseModel " + user_id)
-            self.assertTrue("alice" in val.getvalue())
+            self.assertTrue("Betty" in val.getvalue())
 
     def test_update_okextra(self):
         """tests whether  update test is working """
