@@ -30,4 +30,67 @@
 
 - The console will be a tool to validate this storage engine
 
+### How to start it
+Run the console
 
+```
+$ ./console.py
+```
+
+### Testing
+This project uses python library, `unittest` to run tests on all python files.
+- Interactive tests
+* `python3 -m unittest discover tests`
+
+- Non-interactive test
+* `echo "python3 -m unittest discover tests" | bash`
+
+
+###examples
+Some available commands are:
+
+- show
+- create
+- update
+- destroy
+- count
+
+
+### How to use it
+In interactive mode
+```
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+```
+
+In Non-interactive mode
+```
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+```
