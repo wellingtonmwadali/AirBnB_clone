@@ -3,12 +3,10 @@ header {
     height: 70px;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
-    display: flex;
-    align-items: center
     }
 #header_logo {
 	height: 100%;
-	width: 130px;
+	width: 142px;
 
 	background-image: url("../images/logo.png");
 	background-repeat: no-repeat;
