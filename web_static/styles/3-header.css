@@ -6,7 +6,7 @@ header {
     display: flex;
     align-items: center
     }
-.header_logo {
+#header_logo {
 	height: 100%;
 	width: 130px;
 
